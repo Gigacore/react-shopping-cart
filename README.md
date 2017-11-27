@@ -16,5 +16,4 @@ A simple shopping cart SPA with an ability to persist cart items on page refresh
 * npm start
 
 #### The MIT License (MIT)
-
 MIT © 2017 Santhosh Sundar
