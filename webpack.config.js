@@ -1,5 +1,6 @@
 const path = require("path");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: ['./index.js', './styles/main.scss'],
@@ -15,8 +16,8 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
+        loader: 'babel-loader',
         options: {
           presets: ["react", "stage-0"],
           plugins: ["transform-class-properties", "transform-decorators-legacy"]
@@ -28,6 +29,7 @@ module.exports = {
     contentBase: './'
   },
   plugins: [
-    new ExtractTextPlugin("bundle.css")
+    new ExtractTextPlugin("bundle.css"),
+    new UglifyJsPlugin()
   ]
 }
