@@ -1,6 +1,8 @@
 # React Shopping Cart
 A simple shopping cart SPA with an ability to persist cart items on page refresh. 
 
+**Demo:** http://www.gigacore.in/shopping-cart/
+
 ### Under the hood
 
 * React
