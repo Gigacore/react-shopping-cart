@@ -1,4 +1,4 @@
-export default function reducer(state = [], action) {
+  export default function reducer(state = [], action) {
   switch (action.type) {
     case "ADD_TO_CART": {
       return [
@@ -19,11 +19,13 @@ export default function reducer(state = [], action) {
       });
     }
     case "REMOVE_ITEM": {      
-      const index = state.findIndex(i => i.item === action.payload);
+      const itemIndex = state.findIndex(i => i.item === action.payload);
 
-      let newArray = state.slice();
-      newArray.splice(index, 1);
-      return newArray;
+      // let newArray = state.slice();
+      // newArray.splice(index, 1);
+      // return newArray;
+
+      return state.filter((item, index) => index != itemIndex);
     }
   }
 
