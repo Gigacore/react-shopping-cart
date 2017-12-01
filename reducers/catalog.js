@@ -17,8 +17,8 @@ export default function reducer(state = {
       break;
     }
     case "SYNC_QUANTITY": {
-      const quantity = action.payload.quantity;
-      const item = action.payload.item;
+
+      const { quantity, item } = action.payload;
       const shadowState = state;   
       
       function modifyQuantity(item, quantity){
