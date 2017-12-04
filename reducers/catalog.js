@@ -17,14 +17,8 @@ export default function reducer(state = {
       break;
     }
     case "SYNC_QUANTITY": {
-
       const { quantity, item } = action.payload;
-      
-      // function modifyQuantity(item, quantity){
-        state.items.map((thisItem) => thisItem.productName == item ? thisItem.quantity = quantity : null)
-      // }
-
-      // modifyQuantity(item, quantity)
+      state.items.map((thisItem) => thisItem.productName == item ? thisItem.quantity = quantity : null)
 
       return {
         ...state
