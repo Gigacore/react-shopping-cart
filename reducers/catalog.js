@@ -19,19 +19,16 @@ export default function reducer(state = {
     case "SYNC_QUANTITY": {
 
       const { quantity, item } = action.payload;
-      const shadowState = state;   
       
-      function modifyQuantity(item, quantity){
-        shadowState.items.map((thisItem) => thisItem.productName == item ? thisItem.quantity = quantity : null)
-      }
+      // function modifyQuantity(item, quantity){
+        state.items.map((thisItem) => thisItem.productName == item ? thisItem.quantity = quantity : null)
+      // }
 
-      modifyQuantity(item, quantity)
+      // modifyQuantity(item, quantity)
 
       return {
-        ...state,
-        ...shadowState
+        ...state
       }
-
     }
   }
 
