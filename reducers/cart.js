@@ -1,7 +1,7 @@
   export default function reducer(state = [], action) {
 
-  // Our goal here is to perform actions on cart items without mutating the State
-  // Mutating the State can lead to performance issues as it could unnecessarily 
+  // Our goal here is to perform actions on cart items using "Immutable update patterns"
+  // Mutating the State directly can lead to performance issues as it could unnecessarily 
   // re-render the component.
 
   switch (action.type) {
@@ -16,7 +16,7 @@
     case "UPDATE_CART": {
 
       // This finds the item that is already available in the cart array and updates 
-      // the item's quantity without mutating the State
+      // the item's quantity without mutating directly the State
 
       return state.map((item, index) => {
           if(index !== action.index) {
@@ -31,7 +31,7 @@
     }
     case "REMOVE_ITEM": { 
       
-      // Removes the item from cart array without mutating the state.
+      // Removes the item from cart array without directly mutating the state.
       // The Array.prototype.filter() method prevents us from mutating the array
 
       const itemIndex = state.findIndex(i => i.item === action.payload);
