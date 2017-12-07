@@ -26,7 +26,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: './'
+    contentBase: './public/'
   },
   plugins: [
     new ExtractTextPlugin("bundle.css"),
