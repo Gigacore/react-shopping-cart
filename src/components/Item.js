@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
 
 import Button from './Button';
 import QuantityBar from './QuantityBar';
@@ -46,7 +45,7 @@ export default class Item extends Component {
 
     return (
       <div className="item-wrapper">
-        <div className={classnames("item-container", (productName).toLowerCase().replace(/ /ig, '-'))}>
+        <div className="item-container">
           <div className="product-img">
             <img src={productImage} alt={productName} />
           </div>
