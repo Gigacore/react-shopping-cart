@@ -18,7 +18,7 @@ export default function reducer(state = {
     }
     case "SYNC_QUANTITY": {
       const { quantity, item } = action.payload;
-      state.items.map((thisItem) => thisItem.productName == item ? thisItem.quantity = quantity : null)
+      state.items.map(thisItem => thisItem.productName === item ? thisItem.quantity = quantity : null)
 
       return {
         ...state
