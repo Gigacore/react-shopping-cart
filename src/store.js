@@ -5,13 +5,14 @@ import { createLogger } from "redux-logger"
 import thunk from "redux-thunk"
 import promise from "redux-promise-middleware"
 
-import reducer from './reducers';
+import cart from './reducers/cart';
+import catalog from './reducers/catalog';
 
 const middleware = applyMiddleware(promise(), thunk, createLogger())
 
 let store = compose(
   autoRehydrate()
-)(createStore)(reducer, middleware)
+)(createStore)(cart, catalog, middleware)
 
 persistStore(store);
 
